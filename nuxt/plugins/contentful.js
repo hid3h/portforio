@@ -6,7 +6,13 @@ const config = {
   accessToken: process.env.ctfCdaAccessToken
 }
 
-// export `createClient` to use it in page components
-export function createClient() {
-  return contentful.createClient(config)
+module.exports = {
+  createClient () {
+    return contentful.createClient(config)
+  }
 }
+
+// export `createClient` to use it in page components
+// export function createClient() {
+//   return contentful.createClient(config)
+// }

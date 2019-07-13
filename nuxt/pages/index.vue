@@ -26,9 +26,9 @@ export default {
     Logo,
   },
   async asyncData({ env }) {
-    console.log('hello')
+    console.log('hello2')
     const archives = await client.getEntries({
-      content_type: env.CTF_ARCHIVES_TYPE_ID,
+      content_type: env.ctfArchivesTypeId,
       order: '-sys.createdAt'
     })
     console.log(archives.items)

@@ -64,6 +64,6 @@ export default {
   env: {
     ctfSpaceId: process.env.CTF_SPACE_ID,
     ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
-    CTF_ARCHIVES_TYPE_ID: process.env.CTF_ARCHIVES_TYPE_ID
+    ctfArchivesTypeId: process.env.CTF_ARCHIVES_TYPE_ID
   }
 }
