@@ -1,4 +1,5 @@
 require('dotenv').config()
+const contentful = require('contentful')
 
 export default {
   mode: 'universal',
@@ -60,9 +61,28 @@ export default {
     extend(config, ctx) {
     }
   },
+
   env: {
     ctfSpaceId: process.env.CTF_SPACE_ID,
     ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
     ctfArchivesTypeId: process.env.CTF_ARCHIVES_TYPE_ID
-  }
+  },
+
+  generate: {
+    routes: function () {
+      return contentful
+        .createClient({
+          space: process.env.CTF_SPACE_ID,
+          accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+        }).getEntries()
+        .then((res) => {
+          return res.items.map((archive) => {
+            return {
+              route: '/archives/' + archive.fields.slug,
+              payload: archive
+            }
+          })
+        })
+    }
+  },
 }
