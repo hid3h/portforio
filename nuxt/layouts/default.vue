@@ -47,4 +47,8 @@ h2 {
 .text-right {
   text-align: right;
 }
+
+.mb-20 {
+  margin-bottom: 20px;
+}
 </style>
