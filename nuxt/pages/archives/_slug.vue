@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div class="archive">
     <h1>{{ archive.fields.title }}</h1>
+    <div class="text-right" v-if="archive.fields.oldCreatedAt">
+      <p>{{ archive.fields.oldCreatedAt }}</p>
+    </div>
     <div v-html="$md.render(archive.fields.body)"></div>
   </div>
 </template>
@@ -20,11 +23,11 @@ export default {
 
     const archive = await client.getEntries({
       content_type: env.ctfArchivesTypeId,
-      "fields.slug": params.slug,
+      'fields.slug': params.slug,
       limit: 1
     })
-    console.log(archive)
-    if (!archive) {
+    console.log(archive.items)
+    if (!archive.items) {
       error({ statusCode: 404, message: 'ページが見つかりません' })
     }
     return {
@@ -35,4 +38,11 @@ export default {
 </script>
 
 <style>
+.archive blockquote {
+  background-color: #fafbfc;
+  border: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 10px 1.2em;
+  position: relative;
+}
 </style>
