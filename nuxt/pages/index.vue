@@ -1,18 +1,19 @@
 <template>
   <div>
-    <div v-for="archive in archives" :key="archive.fields.id">
-      {{ archive.fields.title }}
-    </div>
+    <blog-list :prop-archives="archives" />
   </div>
 </template>
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
+import BlogList from '~/components/organisms/BlogList'
 
 const client = createClient()
 
 export default {
-  components: {},
+  components: {
+    BlogList
+  },
   async asyncData({ env }) {
     const archives = await client.getEntries({
       content_type: env.ctfArchivesTypeId,
