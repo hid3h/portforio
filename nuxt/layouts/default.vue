@@ -9,6 +9,11 @@
 </template>
 
 <style>
+
+body, .ant-list {
+  font-family: 'M PLUS Rounded 1c', sans-serif !important;
+}
+
 .ant-layout-header {
   background: #FFF;
   margin-bottom: 10px;
