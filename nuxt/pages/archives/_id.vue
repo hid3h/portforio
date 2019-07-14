@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ archive.fields.title }}</h1>
-    <div>{{ archive.fields.body }}</div>
+    <div v-html="$md.render(archive.fields.body)"></div>
   </div>
 </template>
 
@@ -12,8 +12,8 @@ const client = createClient()
 
 export default {
   async asyncData({ env, params }) {
-      console.log(params.id)
-    const archive = await client.getEntry("1w86cH51mRtlT9oTs26sLg");
+    const entryId = params.id
+    const archive = await client.getEntry(entryId);
     return {
       archive: archive
     }

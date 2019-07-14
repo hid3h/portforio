@@ -41,9 +41,8 @@ export default {
     '@nuxtjs/markdownit',
   ],
   markdownit: {
-    injected: true,
-    breaks: true, // 改行コードを<br>に変換する
-    html: true,
+    injected: true, // $mdでmarkdownをhtmlにレンダリングできるようにする
+    html: true // htmlを使用できるようにする
   },
   /*
   ** Axios module configuration
