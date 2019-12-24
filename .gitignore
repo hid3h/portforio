@@ -88,5 +88,3 @@ sw.*
 .DS_Store
 
 .contentful.json
-
-package-lock.json
