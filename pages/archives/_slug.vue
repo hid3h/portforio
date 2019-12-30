@@ -32,6 +32,9 @@ export default {
     return {
       archive: archive.items[0]
     }
+  },
+  mounted() {
+    twttr.widgets.load();
   }
 }
 </script>
