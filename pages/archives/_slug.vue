@@ -37,16 +37,4 @@ export default {
 </script>
 
 <style>
-/* scopedつけると反映されなくなる？？ */
-.archive blockquote {
-  background-color: #fafbfc;
-  border: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 10px 1.2em;
-  position: relative;
-}
-
-.archive img {
-  width: 100%;
-}
 </style>
