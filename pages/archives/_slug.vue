@@ -33,6 +33,21 @@ export default {
       archive: archive.items[0]
     }
   },
+  head() {
+    return {
+      title: this.archive.fields.title,
+      meta: [
+        // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
+        { hid: 'description', name: 'description', content: this.getDescription() }
+      ]
+    }
+  },
+  methods: {
+    getDescription() {
+      // TODO マークダウンの記号取り除く
+      return this.archive.fields.body.substr(0,100);
+    }
+  },
   mounted() {
     twttr.widgets.load();
   }
