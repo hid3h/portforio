@@ -32,7 +32,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/antd-ui'
+    '@/plugins/antd-ui',
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js modules
