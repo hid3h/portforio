@@ -20,13 +20,12 @@ export default {
         archive: payload
       }
     }
-
     const archive = await client.getEntries({
       content_type: env.ctfArchivesTypeId,
       'fields.slug': params.slug,
       limit: 1
     })
-    console.log(archive.items)
+    // console.log(archive.items)
     if (!archive.items) {
       error({ statusCode: 404, message: 'ページが見つかりません' })
     }
@@ -38,11 +37,16 @@ export default {
 </script>
 
 <style>
+/* scopedつけると反映されなくなる？？ */
 .archive blockquote {
   background-color: #fafbfc;
   border: 1px solid #ccc;
   margin: 1em 0;
   padding: 10px 1.2em;
   position: relative;
+}
+
+.archive img {
+  width: 100%;
 }
 </style>
