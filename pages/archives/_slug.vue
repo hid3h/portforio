@@ -38,7 +38,10 @@ export default {
       title: this.archive.fields.title,
       meta: [
         // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
-        { hid: 'description', name: 'description', content: this.getDescription() }
+        { hid: 'description', name: 'description', content: this.getDescription() },
+        { hid: 'og:title', property: 'og:title', content: this.archive.fields.title },
+        { hid: 'og:description', property: 'og:description', content: this.getDescription() },
+        { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
       ]
     }
   },

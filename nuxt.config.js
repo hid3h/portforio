@@ -15,11 +15,8 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: description },
-      // { hid: 'og:type', property: 'og:type', content: this.meta.type },
       { hid: 'og:title', property: 'og:title', content: title },
       { hid: 'og:description', property: 'og:description', content: description },
-      // { hid: 'og:url', property: 'og:url', content: this.meta.url },
-      // { hid: 'og:image', property: 'og:image', content: this.meta.image },
       { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
     ],
     script: [
