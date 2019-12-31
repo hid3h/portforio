@@ -44,8 +44,7 @@ export default {
   },
   methods: {
     getDescription() {
-      // TODO マークダウンの記号取り除く
-      return this.archive.fields.body.substr(0,100);
+      return this.$md.render(this.archive.fields.body).replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'').substr(0,100)
     }
   },
   mounted() {
