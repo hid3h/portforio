@@ -30,7 +30,7 @@ body, .ant-list {
 /* from ant*/
 h1 {
   margin-top: 1.2em;
-  font-size: 28px; /* ori */
+  font-size: 26px; /* ori */
   margin-bottom: 0.5em;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 600;
@@ -38,10 +38,11 @@ h1 {
 }
 h2 {
   margin-top: 1.2em;
-  font-size: 24px; /* note h3 */
+  font-size: 22px; /* note h3 */
+  /* Mediumのh2は24px */
   margin-bottom: 0.5em;
   color: rgba(0, 0, 0, 0.85);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.35;
 }
 h3 {
@@ -49,8 +50,20 @@ h3 {
   font-size: 16px; /*ori*/
   margin-bottom: 0.5em;
   color:rgba(0, 0, 0, 0.85);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.35;
+}
+
+blockquote {
+  background-color: #fafbfc;
+  border: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 10px 1.2em;
+  position: relative;
+}
+
+img {
+  width: 100%;
 }
 
 .text-right {
@@ -59,16 +72,4 @@ h3 {
 
 .mb-20 {
   margin-bottom: 20px;
-}
-
-.archive blockquote {
-  background-color: #fafbfc;
-  border: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 10px 1.2em;
-  position: relative;
-}
-
-.archive img {
-  width: 100%;
 }

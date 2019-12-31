@@ -20,9 +20,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .v-list__tile {
   height: auto;
+}
+
+h2 {
+  font-size: 18px; /* Medium */
 }
 </style>
 

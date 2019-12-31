@@ -1,10 +1,12 @@
 <template>
   <div class="archive">
     <h1>{{ archive.fields.title }}</h1>
+    <div>TODO ツイッターシェアボタン</div>
     <div class="text-right" v-if="archive.fields.oldCreatedAt">
       <p>{{ archive.fields.oldCreatedAt }}</p>
     </div>
     <div v-html="$md.render(archive.fields.body)"></div>
+    <div>TODO ツイッターシェアボタン</div>
   </div>
 </template>
 
