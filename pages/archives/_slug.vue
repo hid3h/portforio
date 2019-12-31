@@ -1,12 +1,20 @@
 <template>
   <div class="archive">
     <h1>{{ archive.fields.title }}</h1>
-    <div>TODO ツイッターシェアボタン</div>
+    
+    <div>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </div>
+    
     <div class="text-right" v-if="archive.fields.oldCreatedAt">
       <p>{{ archive.fields.oldCreatedAt }}</p>
     </div>
+    
     <div v-html="$md.render(archive.fields.body)"></div>
-    <div>TODO ツイッターシェアボタン</div>
+    
+    <div>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </div>
   </div>
 </template>
 
