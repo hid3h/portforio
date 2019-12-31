@@ -1,17 +1,26 @@
 require('dotenv').config()
 const contentful = require('contentful')
 
+const title = '踊りながらWebサービスを個人開発している人のブログ'
+const description = '作ったWebサービスの記事や普通のブログ記事など'
+
 export default {
   mode: 'universal',
   /*
   ** Headers of the page
   */
   head: {
-    title: '踊りながらWebサービスを個人開発している人のブログ',
+    title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: description },
+      // { hid: 'og:type', property: 'og:type', content: this.meta.type },
+      { hid: 'og:title', property: 'og:title', content: title },
+      { hid: 'og:description', property: 'og:description', content: description },
+      // { hid: 'og:url', property: 'og:url', content: this.meta.url },
+      // { hid: 'og:image', property: 'og:image', content: this.meta.image },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
     ],
     script: [
       { src: 'https://platform.twitter.com/widgets.js' }
