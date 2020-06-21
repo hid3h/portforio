@@ -42,3 +42,19 @@ module.exports = compose([
     },
   ],
 ])
+
+module.exports = {
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    console.log('exportmapp')
+    return {
+      '/': { page: '/' },
+      '/about/index': { page: '/about' },
+      '/archives': { page: '/archives' },
+      // '/archives/learn-nextjs': { page: '/archives', query: { title: 'learn-nextjs' } },
+      // '/archives/deploy-nextjs': { page: '/archives', query: { title: 'deploy-nextjs' } },
+    }
+  },
+}
