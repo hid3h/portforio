@@ -44,15 +44,17 @@ module.exports = compose([
 ])
 
 module.exports = {
+  exportTrailingSlash: true,
   exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
   ) {
-    console.log('exportmapp')
+    console.log('exportmapp2')
     return {
       '/': { page: '/' },
-      '/about/index': { page: '/about' },
+      '/about': { page: '/about' },
       '/archives': { page: '/archives' },
+      '/archives/test': { page: '/archives/test' },
       // '/archives/learn-nextjs': { page: '/archives', query: { title: 'learn-nextjs' } },
       // '/archives/deploy-nextjs': { page: '/archives', query: { title: 'deploy-nextjs' } },
     }
