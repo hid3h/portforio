@@ -3,6 +3,7 @@ import Head from 'next/head'
 import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
+import { Button, DatePicker, version } from "antd";
 
 const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'Home', page: '/' },
@@ -19,7 +20,11 @@ export default ({ titlePre = '' }) => {
   return (
     <header className={styles.header}>
       <Head>
+      <DatePicker />
         <title>{titlePre ? `${titlePre} |` : ''} My Notion Blog</title>
+        <Button>
+          Primary Button
+        </Button>
         <meta
           name="description"
           content="An example Next.js site using Notion for the blog"
