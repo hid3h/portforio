@@ -3,7 +3,8 @@ import Head from 'next/head'
 import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
-import { Button, DatePicker, version } from "antd";
+import { Layout } from "antd";
+const Header = Layout.Header
 
 const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'Home', page: '/' },
@@ -18,13 +19,9 @@ export default ({ titlePre = '' }) => {
   const { pathname } = useRouter()
 
   return (
-    <header className={styles.header}>
+    <Header className={styles.header}>
       <Head>
-      <DatePicker />
         <title>{titlePre ? `${titlePre} |` : ''} My Notion Blog</title>
-        <Button>
-          Primary Button
-        </Button>
         <meta
           name="description"
           content="An example Next.js site using Notion for the blog"
@@ -50,6 +47,6 @@ export default ({ titlePre = '' }) => {
           </li>
         ))}
       </ul>
-    </header>
+    </Header>
   )
 }
